@@ -165,3 +165,14 @@ C:\Projects\Play.Identity\src\Play.Identity.Service\obj\Debug\net5.0\refint\Play
 C:\Projects\Play.Identity\src\Play.Identity.Service\obj\Debug\net5.0\Play.Identity.Service.pdb
 C:\Projects\Play.Identity\src\Play.Identity.Service\obj\Debug\net5.0\Play.Identity.Service.genruntimeconfig.cache
 C:\Projects\Play.Identity\src\Play.Identity.Service\obj\Debug\net5.0\ref\Play.Identity.Service.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\IdentityModel.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\IdentityServer4.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\IdentityServer4.AspNetIdentity.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\IdentityServer4.Storage.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Projects\Play.Identity\src\Play.Identity.Service\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

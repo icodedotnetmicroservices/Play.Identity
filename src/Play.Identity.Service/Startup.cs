@@ -1,21 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using Play.Common.Settings;
 using Play.Identity.Service.Entities;
+using Play.Identity.Service.Settings;
 
 namespace Play.Identity.Service
 {
@@ -36,6 +31,9 @@ namespace Play.Identity.Service
             var serviceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
             var mongoDbSettings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
 
+            IdentityServerSettings identityServerSettings = new();
+
+
             // Wire up identity setup
             services.AddDefaultIdentity<ApplicationUser>()
                     .AddRoles<ApplicationRole>()
@@ -44,6 +42,14 @@ namespace Play.Identity.Service
                         mongoDbSettings.ConnectionString,
                         serviceSettings.ServiceName
                     );
+
+            services.AddIdentityServer()
+                    .AddAspNetIdentity<ApplicationUser>()
+                    .AddInMemoryApiScopes(identityServerSettings.ApiScopes)
+                    .AddInMemoryClients(identityServerSettings.Clients)
+                    .AddInMemoryIdentityResources(identityServerSettings.IdentityResources)
+                    .AddDeveloperSigningCredential();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -67,6 +73,8 @@ namespace Play.Identity.Service
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseIdentityServer();
 
             app.UseAuthorization();
 
