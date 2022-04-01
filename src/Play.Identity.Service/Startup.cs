@@ -43,14 +43,16 @@ namespace Play.Identity.Service
                         serviceSettings.ServiceName
                     );
 
-            services.AddIdentityServer(options => {
-                
+            services.AddIdentityServer(options =>
+            {
+
                 options.Events.RaiseSuccessEvents = true;
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseErrorEvents = true;
             })
             .AddAspNetIdentity<ApplicationUser>()
             .AddInMemoryApiScopes(identityServerSettings.ApiScopes)
+            .AddInMemoryApiResources(identityServerSettings.ApiResources)
             .AddInMemoryClients(identityServerSettings.Clients)
             .AddInMemoryIdentityResources(identityServerSettings.IdentityResources)
             .AddDeveloperSigningCredential();
