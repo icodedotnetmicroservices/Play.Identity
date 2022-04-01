@@ -2,17 +2,18 @@ using System;
 using System.Collections.Generic;
 using IdentityServer4.Models;
 
-namespace Play.Identity.Service.Settings 
+namespace Play.Identity.Service.Settings
 {
-    public class IdentityServerSettings 
+    public class IdentityServerSettings
     {
         public IReadOnlyCollection<ApiScope> ApiScopes { get; set; } = Array.Empty<ApiScope>();
-        public IReadOnlyCollection<Client> Clients { get; set; } = Array.Empty<Client>();
-        public IReadOnlyCollection<IdentityResource> IdentityResources => 
-        new IdentityResource[] 
+        public IReadOnlyCollection<Client> Clients { get; init; }
+        public IReadOnlyCollection<IdentityResource> IdentityResources =>
+        new IdentityResource[]
         {
-            new IdentityResources.OpenId()
+            new IdentityResources.OpenId(),
+            new IdentityResources.Profile()
         };
     }
-    
+
 }
