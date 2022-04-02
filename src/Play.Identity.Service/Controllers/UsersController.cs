@@ -14,8 +14,8 @@ namespace Play.Identity.Service.Controllers
 
     [ApiController]
     [Route("users")]
-    [Authorize(Policy = LocalApi.PolicyName)]
-    public class UsersController : ControllerBase 
+    [Authorize(Policy = LocalApi.PolicyName, Roles = Roles.Admin)]
+    public class UsersController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> userManager;
 
@@ -47,7 +47,7 @@ namespace Play.Identity.Service.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(Guid id, UpdateUserDto userDto)
         {
-             var user = await userManager.FindByIdAsync(id.ToString());
+            var user = await userManager.FindByIdAsync(id.ToString());
 
             if (user == null)
             {
@@ -64,9 +64,9 @@ namespace Play.Identity.Service.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(Guid id) 
+        public async Task<IActionResult> DeleteAsync(Guid id)
         {
-             var user = await userManager.FindByIdAsync(id.ToString());
+            var user = await userManager.FindByIdAsync(id.ToString());
 
             if (user == null)
             {
