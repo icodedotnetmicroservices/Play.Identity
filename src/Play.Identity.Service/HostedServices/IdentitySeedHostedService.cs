@@ -48,10 +48,7 @@ namespace Play.Identity.Service.HostedServices
 
         public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
-        private static async Task CreateRoleIfNotExistAsync(
-            string role,
-            RoleManager<ApplicationRole> roleManager
-        )
+        private static async Task CreateRoleIfNotExistAsync(string role, RoleManager<ApplicationRole> roleManager)
         {
             var roleExists = await roleManager.RoleExistsAsync(role);
 
