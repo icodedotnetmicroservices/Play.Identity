@@ -1,0 +1,12 @@
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\bin\Debug\net5.0\Play.Identity.Contracts.deps.json
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\bin\Debug\net5.0\Play.Identity.Contracts.dll
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\bin\Debug\net5.0\Play.Identity.Contracts.pdb
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\Play.Identity.Contracts.csproj.AssemblyReference.cache
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\Play.Identity.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\Play.Identity.Contracts.AssemblyInfoInputs.cache
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\Play.Identity.Contracts.AssemblyInfo.cs
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\Play.Identity.Contracts.csproj.CoreCompileInputs.cache
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\Play.Identity.Contracts.dll
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\refint\Play.Identity.Contracts.dll
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\Play.Identity.Contracts.pdb
+C:\Projects\Play.Identity\src\Play.Identity.Contracts\obj\Debug\net5.0\ref\Play.Identity.Contracts.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj": {}
+    "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj": {
+    "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
-        "projectName": "Play.Identity.Service",
-        "projectPath": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
+        "projectUniqueName": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj",
+        "projectName": "Play.Identity.Contracts",
+        "projectPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj",
         "packagesPath": "C:\\Users\\13218\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\obj\\",
+        "outputPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\13218\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,6 +29,65 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
+        "projectName": "Play.Identity.Service",
+        "projectPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
+        "packagesPath": "C:\\Users\\13218\\.nuget\\packages\\",
+        "outputPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\13218\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Projects\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj": {
+                "projectPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -63,7 +122,7 @@
             },
             "Play.Common": {
               "target": "Package",
-              "version": "[1.0.2, )"
+              "version": "[1.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
