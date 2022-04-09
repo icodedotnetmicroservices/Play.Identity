@@ -8538,11 +8538,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
+      "projectUniqueName": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
       "projectName": "Play.Identity.Service",
-      "projectPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
+      "projectPath": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
       "packagesPath": "C:\\Users\\13218\\.nuget\\packages\\",
-      "outputPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\obj\\",
+      "outputPath": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\13218\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8560,8 +8560,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj": {
-              "projectPath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj"
+            "C:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj": {
+              "projectPath": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Contracts\\Play.Identity.Contracts.csproj"
             }
           }
         }

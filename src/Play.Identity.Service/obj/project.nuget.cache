@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kFvtxZiZ4/1eyfb8S+WhR0+6kK0HEbfElTwpZOWK7DFwt+dX4P/FN5a0avz559XDFVdJQtm17/COouMSj58Aqg==",
+  "dgSpecHash": "xXaMaxlJ63lNXAhJFFT1ZHyTE8S0oSu+kjRObxPYtpz8p8wvLnyUagSMzaebmzLDHhcX1//tyEGD41wsARQdBg==",
   "success": true,
-  "projectFilePath": "c:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
+  "projectFilePath": "C:\\Projects\\Play.Identity\\src\\Play.Identity.Service\\Play.Identity.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\13218\\.nuget\\packages\\aspnetcore.identity.mongodbcore\\3.1.2\\aspnetcore.identity.mongodbcore.3.1.2.nupkg.sha512",
     "C:\\Users\\13218\\.nuget\\packages\\automatonymous\\5.1.3\\automatonymous.5.1.3.nupkg.sha512",
