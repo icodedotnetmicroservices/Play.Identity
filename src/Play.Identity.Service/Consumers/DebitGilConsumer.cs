@@ -27,14 +27,21 @@ namespace Play.Identity.Service.Consumers
                 throw new UnknownUserException(message.UserId);
             }
 
+            if (user.MessageIds.Contains(context.MessageId.Value))
+            {
+                await context.Publish(new GilDebited(message.CorrelationId));
+                return;
 
+            }
             user.Gil -= message.Gil;
 
             if (user.Gil < 0)
             {
+
                 throw new InsufficientFundsException(message.UserId, message.Gil);
             }
 
+            user.MessageIds.Add(context.MessageId.Value);
             await userManager.UpdateAsync(user);
 
             await context.Publish(new GilDebited(message.CorrelationId));
