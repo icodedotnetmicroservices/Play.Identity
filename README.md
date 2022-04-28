@@ -3,7 +3,7 @@
 Play Economy Identity microservice.
 
 ```powershell
-$version="1.0.2"
+$version="1.0.3"
 $owner="icodedotnetmicroservices"
 $gh_pat="[PAT HERE]"
 
@@ -24,5 +24,6 @@ docker build --secret id=GH_OWNER --secret id=GH_PAT -t play.identity:$version .
 
 ```powershell
 $adminPass="[PASSWORD HERE]"
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__Host=mongo -e RabbitMqSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
+$cosmoDbConnString= "[CONN STRING HERE]"
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmoDbConnString -e RabbitMqSettings__Host=rabbitmq -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
 ```
