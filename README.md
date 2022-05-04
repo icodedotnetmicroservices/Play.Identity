@@ -15,8 +15,8 @@ dotnet pack src\Play.Identity.Contracts\ --configuration Release -p:PackageVersi
 ```powershell
 $env:GH_OWNER="icodedotnetmicroservices"
 $env:GH_PAT="[PAT HERE]"
-
-docker build --secret id=GH_OWNER --secret id=GH_PAT -t play.identity:$version .
+$containerregisteryname = "acrplayeconomy"
+docker build --secret id=GH_OWNER --secret id=GH_PAT -t "$containerregisteryname.azurecr.io/play.identity:$version" .
 
 ```
 
@@ -27,4 +27,12 @@ $adminPass="[PASSWORD HERE]"
 $cosmoDbConnString= "[CONN STRING HERE]"
 $serviceBusConnString= "[CONN STRING HERE]"
 docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmoDbConnString -e ServiceBusSettings__ConnectionString=$serviceBusConnString -e ServiceSettings__MessageBroker="SERVICEBUS" -e IdentitySettings__AdminUserPassword=$adminPass  play.identity:$version
+```
+
+## Publishing The Docker Image 
+```powershell
+# $containerregisteryname = "acrplayeconomy"
+az acr login --name $containerregisteryname
+# docker tag play.identity:$version "$containerregisteryname.azurecr.io/play.identity:$version"
+docker push "$containerregisteryname.azurecr.io/play.identity:$version"
 ```
