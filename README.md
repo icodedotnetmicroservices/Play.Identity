@@ -3,7 +3,7 @@
 Play Economy Identity microservice.
 
 ```powershell
-$version="1.0.5"
+$version="1.0.6"
 $owner="icodedotnetmicroservices"
 $gh_pat="[PAT HERE]"
 
@@ -52,6 +52,7 @@ kubectl create secret generic identity-secrets --from-literal=cosmosdb-connectio
 ```
 
 ## Create the Kubernetes pod
+
 ```powershell
 kubectl apply -f .\kubernetes\identity.yaml -n $namespace
 ```
