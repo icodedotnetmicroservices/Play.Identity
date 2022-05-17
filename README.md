@@ -3,7 +3,7 @@
 Play Economy Identity microservice.
 
 ```powershell
-$version="1.0.6"
+$version="1.0.7"
 $owner="icodedotnetmicroservices"
 $gh_pat="[PAT HERE]"
 

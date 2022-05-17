@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Play.Common.Configuration;
 
 namespace Play.Identity.Service
 {
@@ -19,16 +20,7 @@ namespace Play.Identity.Service
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((context, configurationBuilder) =>
-            {
-                if (context.HostingEnvironment.IsProduction())
-                {
-                    configurationBuilder.AddAzureKeyVault(
-                        new Uri("https://azkeyvaultplayeconomy.vault.azure.net/"),
-                        new DefaultAzureCredential()
-                    );
-                }
-            })
+            .ConfigurationAzureKeyVault()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
