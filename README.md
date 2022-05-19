@@ -66,6 +66,12 @@ az keyvault set-policy -n $azurekeyvaultname --secret-permissions  get list --sp
 
 ## Install the Helm Chart
 ```powershell
-helm install identity-service .\helm -f .\helm\values.yaml -n $namespace
+$helmUser=[guid]::Empty.Guid
+$helmPassword= az acr login --name acr$appname --expose-token --output tsv --query accessToken
+
+$env:HEML_EXPERIMENTAL_OCI=1
+helm registry login "acr$appname.azurecr.io" --username $helmUser --password $helmPassword
+$chartVersion="0.1.0"
+helm upgrade identity-service oci://acr$appname.azurecr.io/helm/microservice --version $chartVersion -f .\helm\values.yaml -n $namespace --install
 
 ```
