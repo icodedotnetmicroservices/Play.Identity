@@ -3,7 +3,7 @@
 Play Economy Identity microservice.
 
 ```powershell
-$version="1.0.8"
+$version="1.0.9"
 $owner="icodedotnetmicroservices"
 $gh_pat="[PAT HERE]"
 
@@ -32,9 +32,7 @@ docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionS
 ## Publishing The Docker Image
 
 ```powershell
-# $containerregisteryname = "acrplayeconomy"
 az acr login --name $containerregisteryname
-# docker tag play.identity:$version "$containerregisteryname.azurecr.io/play.identity:$version"
 docker push "$containerregisteryname.azurecr.io/play.identity:$version"
 ```
 
