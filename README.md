@@ -43,12 +43,6 @@ $namespace="identity"
 kubectl create namespace $namespace
 ```
 
-## Create the Kubernetes pod
-
-```powershell
-kubectl apply -f .\kubernetes\identity.yaml -n $namespace
-```
-
 ## Creating The Pod Managed Identity
 
 ```powershell
@@ -69,8 +63,9 @@ az keyvault set-policy -n $azurekeyvaultname --secret-permissions  get list --sp
 
 ```
 
-## Create a the signing certificate
 
+## Install the Helm Chart
 ```powershell
-kubectl apply -f ./kubernetes/signing-cer.yaml -n $namespace
+helm install identity-service .\helm -f .\helm\values.yaml -n $namespace
+
 ```
