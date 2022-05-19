@@ -3,7 +3,7 @@
 Play Economy Identity microservice.
 
 ```powershell
-$version="1.0.9"
+$version="1.0.10"
 $owner="icodedotnetmicroservices"
 $gh_pat="[PAT HERE]"
 
@@ -70,6 +70,7 @@ az keyvault set-policy -n $azurekeyvaultname --secret-permissions  get list --sp
 ```
 
 ## Create a the signing certificate
+
 ```powershell
 kubectl apply -f ./kubernetes/signing-cer.yaml -n $namespace
 ```
