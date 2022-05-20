@@ -3,7 +3,7 @@
 Play Economy Identity microservice.
 
 ```powershell
-$version="1.0.10"
+$version="1.0.12"
 $owner="icodedotnetmicroservices"
 $gh_pat="[PAT HERE]"
 
@@ -63,8 +63,8 @@ az keyvault set-policy -n $azurekeyvaultname --secret-permissions  get list --sp
 
 ```
 
-
 ## Install the Helm Chart
+
 ```powershell
 $helmUser=[guid]::Empty.Guid
 $helmPassword= az acr login --name acr$appname --expose-token --output tsv --query accessToken
