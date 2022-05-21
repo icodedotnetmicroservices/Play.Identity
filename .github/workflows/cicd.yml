@@ -56,6 +56,10 @@ jobs:
     
     env: 
       ACR_APP_NAME: acrplayeconomy
+      AKS_APP_NAME: aksclusterplayeconomy
+      APP_NAME: playeconmy
+      SERVICE_NAME: identity
+      HELM_CHART_VERSION: 0.1.0
       
     permissions:
       id-token: write
@@ -83,6 +87,31 @@ jobs:
           "GH_PAT=${{secrets.GH_PAT}} "
         tags: ${{env.ACR_APP_NAME}}.azurecr.io/play.identity:${{ needs.generate-version.outputs.new_version }}
         push: true
-        
+    
+    - name: Get AKS Credentials
+      run: az aks get-credentials --resource-group ${{env.APP_NAME}} --name ${{env.AKS_APP_NAME}} 
       
+    - name: Helm tool installer
+      uses: Azure/setup-helm@v2.0
+      
+    - name: Login to Helm registry
+      run: |
+        helmUser="00000000-0000-0000-0000-000000000000"
+        helmPassword=$(az acr login --name acr${{env.APP_NAME}} --expose-token --output tsv --query accessToken)
+        helm registry login acr${{env.APP_NAME}}.azurecr.io --username $helmUser --password $helmPassword
+      env:
+        HEML_EXPERIMENTAL_OCI: 1
+  
+    - name: Deploy Helm Chart
+      run: |
+        helm upgrade \
+        ${{env.SERVICE_NAME}}-service oci://acr${{env.APP_NAME}}.azurecr.io/helm/microservice \
+        --version ${{env.HELM_CHART_VERSION}} \
+        -f helm/values.yaml \
+        -n ${{env.SERVICE_NAME}} \
+        --set image.tag=${{ needs.generate-version.outputs.new_version }} \
+        --install
+        --wait
+      env:
+        HEML_EXPERIMENTAL_OCI: 1
         
