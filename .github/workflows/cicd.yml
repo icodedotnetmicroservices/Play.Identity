@@ -110,7 +110,7 @@ jobs:
         -f helm/values.yaml \
         -n ${{env.SERVICE_NAME}} \
         --set image.tag=${{ needs.generate-version.outputs.new_version }} \
-        --install
+        --install \
         --wait
       env:
         HEML_EXPERIMENTAL_OCI: 1
