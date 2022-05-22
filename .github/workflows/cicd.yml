@@ -97,7 +97,7 @@ jobs:
     - name: Login to Helm registry
       run: |
         helmUser="00000000-0000-0000-0000-000000000000"
-        helmPassword=$(az acr login --name acr${{env.APP_NAME}} --expose-token --output tsv --query accessToken)
+        helmPassword=$(az acr login --name ${{env.ACR_APP_NAME}} --expose-token --output tsv --query accessToken)
         helm registry login acr${{env.APP_NAME}}.azurecr.io --username $helmUser --password $helmPassword
       env:
         HEML_EXPERIMENTAL_OCI: 1
@@ -105,7 +105,7 @@ jobs:
     - name: Deploy Helm Chart
       run: |
         helm upgrade \
-        ${{env.SERVICE_NAME}}-service oci://acr${{env.APP_NAME}}.azurecr.io/helm/microservice \
+        ${{env.SERVICE_NAME}}-service oci://${{env.ACR_APP_NAME}}.azurecr.io/helm/microservice \
         --version ${{env.HELM_CHART_VERSION}} \
         -f helm/values.yaml \
         -n ${{env.SERVICE_NAME}} \
