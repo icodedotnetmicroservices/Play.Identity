@@ -26,7 +26,7 @@ docker build --secret id=GH_OWNER --secret id=GH_PAT -t "$containerregisteryname
 $adminPass="[PASSWORD HERE]"
 $cosmosDbConnString= "[CONN STRING HERE]"
 $serviceBusConnString= "[CONN STRING HERE]"
-docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e ServiceBusSettings__ConnectionString=$serviceBusConnString -e ServiceSettings__MessageBroker="SERVICEBUS" -e IdentitySettings__AdminUserPassword=$adminPass  play.identity:$version
+docker run -it --rm -p 5002:5002 --name identity -e MongoDbSettings__ConnectionString=$cosmosDbConnString -e ServiceBusSettings__ConnectionString=$serviceBusConnString -e ServiceSettings__MessageBroker="SERVICEBUS" -e IdentitySettings__AdminUserPassword=$adminPass --network playinfra_default play.identity:$version
 ```
 
 ## Publishing The Docker Image
